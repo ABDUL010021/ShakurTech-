@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShakurTech | Nyumbani</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ShakurTech</h1>
+    <p class="tagline">Nyumbani kwa Ubunifu wa IT na Graphic Design</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Nyumbani | Home</a></li>
+        <li><a href="about.html">Kuhusu Mimi | About</a></li>
+        <li><a href="portfolio.html">Kazi Zangu | Portfolio</a></li>
+        <li><a href="services.html">Huduma | Services</a></li>
+        <li><a href="contact.html">Wasiliana | Contact</a></li>
+      <li><a href="download.html">Pakua | Download</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Karibu kwenye tovuti yangu rasmi</h2>
+    <p>Jina langu ni Abdulshakur — Mtaalamu wa IT na Mbunifu wa Kipekee.</p>
+    <a href="portfolio.html" class="btn">Tazama Kazi Zangu | View My Work</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ABDULSHAKUR. Haki zote zimehifadhiwa.</p>
+  </footer>
+  <!-- Modal for full image -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+<script>
+  // Fungua modal
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const images = document.querySelectorAll(".gallery img");
+
+  images.forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  // Funga modal
+  document.querySelector(".close").addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Funga modal ukiclick nje ya picha
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+</body>
+</html>
